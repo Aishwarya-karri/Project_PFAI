@@ -1,0 +1,6 @@
+role_name,skill_name,learning_sequence,platform,url_link,why_this_platform
+Data_Scientist,Python Basics,1,freeCodeCamp,https://wwww.freecodecamp.org,Best Interactive IDE for beginners.
+Data_Scientist,SQL Aggregation,2,HackerRank,https://www.hackerrank.com/doamins/sql,Industry standard for SQL practice.
+Data_Scientist,Pandas & Data Prep,3,Kaggle,https://wwww.kaggle.com/learn,provides free datasets to practice on immediately.
+Web_Developer,HTML & CSS,1,W3Schools,https://www.w3schools.com,Simple reference guides with try-it-yourself editors.
+Web_Developer,JavaScript Basics,2,MDN Web Docs,https://developer.mozilla.org,The official documentation used by senior devs.
