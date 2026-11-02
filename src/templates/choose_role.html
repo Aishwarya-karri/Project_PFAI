@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PFAI - Choose Your Path</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 40px 20px; background-color: #f4f6f9; }
+        .container { background: white; padding: 35px; border-radius: 12px; max-width: 580px; box-shadow: 0px 4px 15px rgba(0,0,0,0.08); margin: auto; }
+        .option-card { border: 2px solid #e2e8f0; padding: 16px; margin: 14px 0; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; display: block; }
+        .option-card:hover { border-color: #007BFF; background-color: #f8fbff; }
+        details { margin-top: 10px; font-size: 14px; color: #4a5568; }
+        summary { cursor: pointer; color: #007BFF; font-weight: 600; outline: none; }
+        summary:hover { text-decoration: underline; }
+        .role-desc { margin: 8px 0 4px 0; background: #edf2f7; padding: 10px 12px; border-radius: 6px; line-height: 1.4; }
+        .note-box { background-color: #fffaf0; border-left: 4px solid #dd6b20; padding: 14px 16px; border-radius: 6px; margin: 25px 0 15px 0; font-size: 13.5px; color: #7b341e; line-height: 1.5; }
+        button { background-color: #007BFF; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; margin-top: 15px;}
+        button:hover { background-color: #0056b3; }
+        select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e0; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>The AI Analyzed Your Profile!</h2>
+        <p style="color: #4a5568;">Based on your academic strengths and problem-solving aptitude, here are your top 2 career matches:</p>
+        
+        <form action="/roadmap" method="POST">
+            <!-- Option 1 -->
+            <label class="option-card">
+                <input type="radio" name="chosen_role" value="{{ role1 }}" required>
+                <strong style="font-size: 17px; margin-left: 6px;">{{ role1.replace('_', ' ') }}</strong> 
+                <span style="color: #2b6cb0; font-weight: bold;">({{ prob1 }}% Match)</span>
+                
+                <details>
+                    <summary>What does this role actually do? (Click to view)</summary>
+                    <p class="role-desc">{{ desc1 }}</p>
+                </details>
+            </label>
+            
+            <!-- Option 2 -->
+            <label class="option-card">
+                <input type="radio" name="chosen_role" value="{{ role2 }}">
+                <strong style="font-size: 17px; margin-left: 6px;">{{ role2.replace('_', ' ') }}</strong> 
+                <span style="color: #2b6cb0; font-weight: bold;">({{ prob2 }}% Match)</span>
+                
+                <details>
+                    <summary>What does this role actually do? (Click to view)</summary>
+                    <p class="role-desc">{{ desc2 }}</p>
+                </details>
+            </label>
+
+            <!-- Degree Track Selection -->
+            <h3 style="margin-top: 25px; margin-bottom: 5px;">What is your current academic track?</h3>
+            <select name="degree_type" required>
+                <option value="" disabled selected>Select your degree format...</option>
+                <option value="B.Sc Degree (3 Years)">B.Sc Degree (3 Years)</option>
+                <option value="B.Tech (4 Years)">B.Tech (4 Years)</option>
+            </select>
+
+            <!-- Career Exploration Disclaimer -->
+            <div class="note-box">
+                <strong>💡 A Quick Note on Your Path:</strong><br>
+                These recommendations are not rigid or fixed boundaries for your career. They are smart, tailored starting points chosen based on your current math, science, and problem-solving indicators. If you wish to build your own pathway here, we are thrilled to guide you! If you ever want to pivot, our comprehensive roadmap hub lets you view and explore all 30 career domains and full college coursework plans at any time.
+            </div>
+
+            <button type="submit">Generate My Custom Roadmap</button>
+        </form>
+    </div>
+</body>
+</html>

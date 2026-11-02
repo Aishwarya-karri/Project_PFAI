@@ -22,7 +22,7 @@ conn.close()
 # 3. Prepare the Data (Split into Features and Target)
 # X = The student's stats (Inputs)
 # y = The actual career they ended up in (Output)
-X = df[['math_score', 'science_score', 'coding_interest', 'logic_score']]
+X = df[['math_score', 'science_score', 'Tech Curiosity', 'Problem Solving']]
 y = df['final_career']
 
 # 4. Train the AI Model (Random Forest Classifier)

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PFAI - Final Roadmap</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 40px; background-color: #f4f6f9; }
+        .container { background: white; padding: 40px; border-radius: 12px; max-width: 700px; box-shadow: 0px 4px 15px rgba(0,0,0,0.08); margin: auto; }
+        .badge { display: inline-block; background: #28a745; color: white; padding: 6px 16px; border-radius: 20px; font-weight: bold; margin-bottom: 20px;}
+        h1 { margin-top: 0; color: #333; text-align: center; }
+        .timeline { margin-top: 30px; border-left: 4px solid #007BFF; padding-left: 20px; }
+        .year-block { margin-bottom: 25px; }
+        .year-title { font-weight: bold; color: #007BFF; font-size: 18px; margin-bottom: 5px; }
+        .task { background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0; color: #4a5568; line-height: 1.5; }
+        .home-btn { display: block; text-align: center; margin-top: 30px; text-decoration: none; background: #333; color: white; padding: 12px 20px; border-radius: 6px; font-weight: bold; }
+        .home-btn:hover { background: #555; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;">
+            <div class="badge">{{ degree }} Track</div>
+            <h1>Your Roadmap to becoming a <br><span style="color: #007BFF;">{{ role }}</span></h1>
+        </div>
+        
+        <div class="timeline">
+            {% if plan %}
+                <div class="year-block">
+                    <div class="year-title">Year 1: Foundation</div>
+                    <div class="task">{{ plan['year_1'] }}</div>
+                </div>
+                
+                <div class="year-block">
+                    <div class="year-title">Year 2: Skill Building</div>
+                    <div class="task">{{ plan['year_2'] }}</div>
+                </div>
+                
+                <div class="year-block">
+                    <div class="year-title">Year 3: Projects & Portfolio</div>
+                    <div class="task">{{ plan['year_3'] }}</div>
+                </div>
+
+                {% if plan['year_4'] != 'N/A' %}
+                <div class="year-block">
+                    <div class="year-title">Year 4: Placements & Advanced Prep</div>
+                    <div class="task">{{ plan['year_4'] }}</div>
+                </div>
+                {% endif %}
+            {% else %}
+                <div class="task" style="border-color: #dc3545; color: #dc3545;">
+                    Roadmap data for this specific role and degree combination is currently being updated in the database.
+                </div>
+            {% endif %}
+        </div>
+
+        <a href="/" class="home-btn">Explore Another Path</a>
+    </div>
+</body>
+</html>

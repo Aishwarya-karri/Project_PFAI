@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PFAI Career Advisor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; background-color: #f4f4f9; }
+        .container { background: white; padding: 30px; border-radius: 10px; max-width: 400px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { background-color: #28a745; color: white; border: none; padding: 10px 15px; width: 100%; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Academic Profile</h2>
+        <form action="/predict" method="POST">
+            <label>Math Score (Intermediate MPC) (0-100%):</label>
+            <input type="number" name="math_score" required>
+            
+            <label>Science Score (Physics & Chemistry) (0-100%):</label>
+            <input type="number" name="science_score" required>
+            
+            <label>Tech Curiosity: How interested are you in learning how apps and software are built? (1-10):</label>
+            <input type="number" name="coding_interest" required>
+            
+            <label>Problem Solving: How much do you enjoy solving puzzles, riddles, and brain-teasers? (1-10):</label>
+            <input type="number" name="logic_score" required>
+            
+            <button type="submit">Predict My Career Path</button>
+        </form>
+    </div>
+</body>
+</html>
